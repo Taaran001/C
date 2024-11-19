@@ -942,3 +942,14 @@
 // }
 
 //                  program 6(g)
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s1[] = "Hello", s2[] = "World", s3[20];
+//     printf("Length: %lu\n", strlen(s1));         // Length
+//     strcpy(s3, s1);                             // Copy
+//     strcat(s3, s2);                            // Concatenate
+//     printf("Compare: %d\n", strcmp(s1, s2));    // Compare
+//     printf("Find 'o': %ld\n", strchr(s1, 'o') - s1); // Find char
+//     return 0;
+// }
