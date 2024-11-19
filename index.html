@@ -240,4 +240,217 @@
 </html> -->
 
                     <!-- 8 -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Implementation Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .embedded-style {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="external-style">
+        <h2>External CSS Example</h2>
+    </div>
+    <div class="embedded-style">
+        <h2>Embedded CSS Example</h2>
+    </div>
+    <div style="background-color: #e8f4f8; padding: 10px;">
+        <h2 >Inline CSS Example</h2>
+    </div>
+</body>
+</html> -->
+
+                    <!-- 9 -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            background-image: url('https://picsum.photos/800/400');
+            height: 300px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        a:visited {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button">Hover over me!</button>
+        <br><br>
+        <a href="#">Click me</a>
+    </div>
+</body>
+</html> -->
+
+                    <!-- 10 -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 20px;
+            transition: transform 0.5s;
+        }
+        .translate:hover {
+            transform: translate(50px, 50px);
+        }
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+        .scale:hover {
+            transform: scale(1.5);
+        }
+        .skew:hover {
+            transform: skew(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box translate">Translate</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box skew">Skew</div>
+</body>
+</html> -->
+
+                    <!-- 11 -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <form id="signupForm" onsubmit="return validateForm()">
+        <div>
+            <label>Username:</label>
+            <input type="text" id="username" required>
+            <span id="userError" class="error"></span>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" id="password" required>
+            <span id="passError" class="error"></span>
+        </div>
+        <div>
+            <label>Phone:</label>
+            <input type="tel" id="phone" required>
+            <span id="phoneError" class="error"></span>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            const username = document.getElementById('username').value;
+            if (!/^[a-zA-Z0-9]{3,15}$/.test(username)) {
+                document.getElementById('userError').textContent = 'Username must be 3-15 alphanumeric characters';
+                isValid = false;
+            }
+            const password = document.getElementById('password').value;
+            if (!/^(?=.*\d).{6,}$/.test(password)) {
+                document.getElementById('passError').textContent = 'Password must be 6+ characters with at least 1 number';
+                isValid = false;
+            }
+            const phone = document.getElementById('phone').value;
+            if (!/^\d{10}$/.test(phone)) {
+                document.getElementById('phoneError').textContent = 'Enter 10-digit phone number';
+                isValid = false;
+            }
+            return isValid;
+        }
+    </script>
+</body>
+</html> -->
+
+                    <!-- 12 -->
+<!-- <!DOCTYPE html>
+<html>
+<body>
+    <script>
+        const isLeapYear = year => year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+        let year = prompt("Enter a year:");
+        alert(isLeapYear(year) ? "Leap Year" : "Not a Leap Year");
+    </script>
+</body>
+</html> -->
+
+                    <!-- 13 -->
+<!-- <!DOCTYPE html>
+<html>
+<body>
+    <input type="number" id="temp" placeholder="Enter temperature">
+    <select id="unit">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+    <script>
+        function convert() {
+            let temp = document.getElementById("temp").value;
+            let unit = document.getElementById("unit").value;
+            let result = unit === "C" ?
+                (temp * 9/5 + 32).toFixed(1) + "°F" :
+                ((temp - 32) * 5/9).toFixed(1) + "°C";
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html> -->
+
+                    <!-- 14 -->
+<!-- <!DOCTYPE html>
+<html ng-app="shoppingApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="ShoppingCtrl">
+    <h2>My Shopping List</h2>
+    <input type="text" ng-model="newItem" placeholder="Add item">
+    <button ng-click="addItem()">Add</button>
+    <ul>
+        <li ng-repeat="item in items">
+            {{item}}
+            <button ng-click="removeItem($index)">✕</button>
+        </li>
+    </ul>
+    <script>
+        var app = angular.module('shoppingApp', []);
+        app.controller('ShoppingCtrl', function($scope) {
+            $scope.items = ['Milk', 'Bread', 'Eggs'];
+
+            $scope.addItem = function() {
+                if ($scope.newItem) {
+                    $scope.items.push($scope.newItem);
+                    $scope.newItem = '';
+                }
+            };
+            $scope.removeItem = function(index) {
+                $scope.items.splice(index, 1);
+            };
+        });
+    </script>
+</body>
+</html> -->
+
+                    <!-- 15 -->
 
