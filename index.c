@@ -199,13 +199,40 @@
 // }
 
 //                 program 2(c)
-
-
-
-
-
-
-
+// #include <stdio.h>
+// int main(){
+//     int r1, c1, r2, c2;
+//     printf("Enter first matrix (row, column): ");
+//     scanf("%d %d", &r1, &c1);
+//     int a[r1][c1];
+//     for (int i = 0; i < r1; i++)
+//         for (int j = 0; j < c1; j++)
+//             scanf("%d", &a[i][j]);
+//     printf("Enter second matrix (row, column): ");
+//     scanf("%d %d", &r2, &c2);
+//     if (c1 != r2){printf("Invalid dimensions\n"); return 1;}
+//     int b[r2][c2], res[r1][c2];
+//     for (int i = 0; i < r2; i++)
+//         for (int j = 0; j < c2; j++)
+//             scanf("%d", &b[i][j]);
+//     printf("\nResult Matrix:\n");
+//     for (int i = 0; i < r1; i++){
+//         for (int j = 0; j < c2; j++){
+//             res[i][j] = 0;
+//             for (int k = 0; k < c1; k++)
+//                 res[i][j] += a[i][k] * b[k][j];
+//             printf("%d ", res[i][j]);
+//         }
+//         printf("\n");
+//     }
+//     printf("\nTranspose Matrix:\n");
+//     for (int i = 0; i < c2; i++){
+//         for (int j = 0; j < r1; j++)
+//             printf("%d ", res[j][i]);
+//         printf("\n");
+//     }
+//     return 0;
+// }
 
 //                 program 2(d)
 // #include <stdio.h>
@@ -802,3 +829,116 @@
 //     }
 //     return 0;
 // }
+
+// 6)
+//                  program 6(a)
+// #include <stdio.h>
+// extern int externVar;  // Global variable declaration
+// void function() {
+//     auto int a = 10;      // automatic storage class
+//     static int s = 0;     // static storage class
+//     register int r = 20;  // register storage class
+//     printf("auto: %d, static: %d, register: %d\n", a, s++, r);
+// }
+// int main() {
+//     externVar = 100;  // extern storage class
+//     printf("extern: %d\n", externVar);
+
+//     for(int i = 0; i < 2; i++)
+//         function();
+//     return 0;
+// }
+// int externVar;
+
+//                  program 6(b)
+// #include <stdio.h>
+// int main() {
+//     int i;
+
+//     for (i = 1; i <= 5; i++) {
+//         if (i == 3) break;
+//         printf("%d ", i);
+//     }
+//     printf("\n");
+//     for (i = 1; i <= 5; i++) {
+//         if (i == 3) continue;
+//         printf("%d ", i);
+//     }
+//     printf("\n");
+//     i = 1;
+// start:
+//     if (i > 3) goto end;
+//     printf("%d ", i++);
+//     goto start;
+// end:
+//     return 0;
+// }
+
+//                  program 6(c)
+// #include <stdio.h>
+// int main() {
+//     int i;
+//     char *types[] = {"for", "while", "do-while"};
+//     for(int j = 0; j < 3; j++) {
+//         printf("Using %s loop:\n", types[j]);
+//         for(i = 1; i <= 5; i++) printf("%d ", i);
+//         printf("\n\n");
+//     }
+//     return 0;
+// }
+
+//                  program 6(d)
+// #include <stdio.h>
+// int main() {
+//     int a = 5, b = 3;
+//     printf("Logical AND: %d\n", a > 0 && b > 0);
+//     printf("Bitwise AND: %d\n", a & b);
+//     printf("Ternary: %d\n", (a > b) ? a : b);
+//     return 0;
+// }
+
+//                  program 6(e)
+// #include <stdio.h>
+// #include <stdlib.h>
+// struct Node {
+//     int data;
+//     struct Node* next;
+// };
+// void insert(struct Node** head, int value) {
+//     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+//     newNode->data = value;
+//     newNode->next = *head;
+//     *head = newNode;
+// }
+// void display(struct Node* head) {
+//     while (head != NULL) {
+//         printf("%d -> ", head->data);
+//         head = head->next;
+//     }
+//     printf("NULL\n");
+// }
+// int main() {
+//     struct Node* head = NULL;
+//     insert(&head, 10);
+//     insert(&head, 20);
+//     display(head);
+//     return 0;
+// }
+
+//                  program 6(f)
+// #include <stdio.h>
+// #define PI 3.14159
+// #define SQUARE(x) ((x) * (x))
+// #define DEBUG 1
+// int main() {
+//     float radius = 5.0;
+//     float area = PI * SQUARE(radius);
+//     printf("Area of circle: %.2f\n", area);
+//     #if DEBUG
+//         printf("Debug mode is ON\n");
+//         printf("Radius used: %.2f\n", radius);
+//     #endif
+//     return 0;
+// }
+
+//                  program 6(g)
